@@ -1,9 +1,21 @@
 {
-  "name": "Front end starter kit",
+  "name": "frontend-starter-kit",
   "version": "1.0.0",
+  "description": "- Package manager - npm 6/8\r   - Task runner - Gulp\r   - Templating - Next.js / Handlebars\r   - Reinforce frontend style - Linters and Prettier",
+  "main": "gulpfile.babel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClustersTeam/frontend-starter-kit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClustersTeam/frontend-starter-kit/issues"
+  },
+  "homepage": "https://github.com/ClustersTeam/frontend-starter-kit#readme",
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
