@@ -4,7 +4,8 @@
   "description": "- Package manager - npm 6/8\r   - Task runner - Gulp\r   - Templating - Next.js / Handlebars\r   - Reinforce frontend style - Linters and Prettier",
   "main": "gulpfile.babel.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/gulp"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "gulp": "^3.9.1",
-    "gulp-babel": "^8.0.0"
+    "gulp-babel": "^8.0.0",
+    "gulp-cli": "^2.0.1"
   }
 }
