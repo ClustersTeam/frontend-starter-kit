@@ -23,3 +23,18 @@
   4. Use SVG
   5. Lazyloading
   6. Handling responsive images (srcset, picture)
+
+  # Installations
+  - Download and install Node.js(for npm) from the [Node.js](https://nodejs.org/).
+  - To install manually node modules run:
+  ```
+  > npm install
+  ```
+
+  # Setup
+  The following commands are available:
+  - to start the project
+  ```
+  > npm run start
+  ```
+  
