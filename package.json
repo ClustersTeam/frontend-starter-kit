@@ -5,8 +5,9 @@
   "main": "gulpfile.babel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node_modules/.bin/gulp",
-    "watch": "node_modules/.bin/gulp watch"
+    "dev": "node_modules/.bin/gulp --env dev",
+    "prod": "node_modules/.bin/gulp --env prod",
+    "watch": "node_modules/.bin/gulp watch --env dev"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-cli": "^2.0.1",
     "gulp-cssnano": "^2.1.3",
+    "gulp-if": "^2.0.2",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4"
   }
