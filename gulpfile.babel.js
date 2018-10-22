@@ -47,10 +47,31 @@ gulp.task('watch', function() {
         server: {
             baseDir: './'
         }
-});
-		
-gulp.watch(input, gulp.parallel('sass', 'scripts'))
-	.on('change', function(event){
-		console.log('File' + event.path + ' was ' + event.type + ', running tasks...')
 	});
+			
+	gulp.watch(input, gulp.parallel('sass', 'scripts'))
+		.on('change', function(event){
+			console.log('File' + event.path + ' was ' + event.type + ', running tasks...')
+		});
+});
+
+// TODO: Test task (in separate file)
+// - gulp size 
+// - eslint 
+
+gulp.task('test', function(done) {
+	
+	// Example
+ 	gulp.task('sass', function () {
+		return gulp.src(input)
+		.pipe(gulpif(global.env === 'dev', sourcemaps.init()))
+		.pipe(sass({fiber: Fiber}).on('error', sass.logError))
+		.pipe(autoprefixer())
+		.pipe(gulpif(global.env === 'prod', cssnano()))
+		.pipe(gulpif(global.env === 'dev', sourcemaps.write()))
+		.pipe(gulp.dest(output))
+		.pipe(gulpif(global.env === 'dev', browserSync.stream()))
+	});
+
+	done()
 });
