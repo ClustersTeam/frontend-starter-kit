@@ -21,13 +21,22 @@ gulp.task('sass', function () {
 	.pipe(browserSync.stream())
 });
 
-gulp.task('default', () =>
-    gulp.src('src/app.js')
-        .pipe(babel({
-            presets: ['@babel/env']
-		}))
-		.pipe(cssnano())
-        .pipe(gulp.dest('dist'))
+gulp.task('sass:prod', function () {
+	return gulp.src(input)
+	.pipe(sass({fiber: Fiber}).on('error', sass.logError))
+	.pipe(autoprefixer())
+	.pipe(cssnano())
+	.pipe(gulp.dest(output))
+});
+
+gulp.task('build', gulp.series(gulp.parallel('sass:prod')));
+  
+gulp.task('default', gulp.series('build'), () => gulp.src('src/app.js')
+	.pipe(babel({
+		presets: ['@babel/env']
+	}))
+
+	.pipe(gulp.dest('dist'))
 );
 
 gulp.task('watch', function() {
@@ -36,7 +45,7 @@ gulp.task('watch', function() {
             baseDir: './'
         }
 });
- 
+		
 gulp.watch(input, gulp.parallel('sass'))
 	.on('change', function(event){
 		console.log('File' + event.path + ' was ' + event.type + ', running tasks...')
