@@ -12,7 +12,7 @@ const output = './dist/styles';
 gulp.task('sass', function () {
 	return gulp.src(input)
 	.pipe(sourcemaps.init())
-	.pipe(sass())
+	.pipe(sass().on('error', sass.logError))
 	.pipe(autoprefixer())
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest(output))
