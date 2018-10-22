@@ -5,15 +5,9 @@
   "main": "gulpfile.babel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
     "dev": "node_modules/.bin/gulp --env dev",
     "prod": "node_modules/.bin/gulp --env prod",
     "watch": "node_modules/.bin/gulp watch --env dev"
-=======
-    "start": "node_modules/.bin/gulp",
-    "watch": "node_modules/.bin/gulp watch",
-    "prod": "node_modules/.bin/gulp prod"
->>>>>>> dd06ada8946996325776a5c9c20cc98464df4e4d
   },
   "repository": {
     "type": "git",
