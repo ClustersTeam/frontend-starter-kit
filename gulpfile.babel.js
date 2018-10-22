@@ -33,11 +33,28 @@ gulp.task('sass', function () {
 	.pipe(gulpif(global.env === 'dev', browserSync.stream()))
 });
 
+<<<<<<< HEAD
 gulp.task('scripts', () => gulp.src('src/app.js')
 	.pipe(babel({
 		presets: ['@babel/env']
 	}))
 	.pipe(gulp.dest('dist'))
+=======
+gulp.task('sass:prod', function () {
+	return gulp.src(input)
+	.pipe(sass({fiber: Fiber}).on('error', sass.logError))
+	.pipe(autoprefixer())
+	.pipe(cssnano())
+	.pipe(gulp.dest(output))
+});
+
+gulp.task('default', () =>
+    gulp.src('src/app.js')
+        .pipe(babel({
+            presets: ['@babel/env']
+		}))
+        .pipe(gulp.dest('dist'))
+>>>>>>> dd06ada8946996325776a5c9c20cc98464df4e4d
 );
   
 gulp.task('default', gulp.parallel('sass'));
@@ -55,6 +72,7 @@ gulp.task('watch', function() {
 		});
 });
 
+<<<<<<< HEAD
 // TODO: Test task (in separate file)
 // - gulp size 
 // - eslint 
@@ -71,6 +89,13 @@ gulp.task('test', function(done) {
 		.pipe(gulpif(global.env === 'dev', sourcemaps.write()))
 		.pipe(gulp.dest(output))
 		.pipe(gulpif(global.env === 'dev', browserSync.stream()))
+=======
+gulp.task('prod', ['sass:prod']);
+ 
+gulp.watch(input, gulp.parallel('sass'))
+	.on('change', function(event){
+		console.log('File' + event.path + ' was ' + event.type + ', running tasks...')
+>>>>>>> dd06ada8946996325776a5c9c20cc98464df4e4d
 	});
 
 	done()
