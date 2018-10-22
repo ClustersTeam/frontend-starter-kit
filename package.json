@@ -5,7 +5,8 @@
   "main": "gulpfile.babel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node_modules/.bin/gulp"
+    "start": "node_modules/.bin/gulp",
+    "watch": "node_modules/.bin/gulp watch"
   },
   "repository": {
     "type": "git",
@@ -20,8 +21,12 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
+    "gulp-cli": "^2.0.1",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
-    "gulp-cli": "^2.0.1"
+    "browser-sync": "^2.26.3",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4"
   }
 }
