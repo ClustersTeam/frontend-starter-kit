@@ -7,7 +7,7 @@ const babel = require('gulp-babel');
 const browserSync = require("browser-sync").create();
 
 const input = './src/styles/**/*.scss';
-const output = './dist/styles/css';
+const output = './dist/styles';
  
 gulp.task('sass', function () {
 	return gulp.src(input)
