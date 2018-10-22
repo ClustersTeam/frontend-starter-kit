@@ -21,12 +21,19 @@ gulp.task('sass', function () {
 	.pipe(browserSync.stream())
 });
 
+gulp.task('sass:prod', function () {
+	return gulp.src(input)
+	.pipe(sass({fiber: Fiber}).on('error', sass.logError))
+	.pipe(autoprefixer())
+	.pipe(cssnano())
+	.pipe(gulp.dest(output))
+});
+
 gulp.task('default', () =>
     gulp.src('src/app.js')
         .pipe(babel({
             presets: ['@babel/env']
 		}))
-		.pipe(cssnano())
         .pipe(gulp.dest('dist'))
 );
 
@@ -36,6 +43,8 @@ gulp.task('watch', function() {
             baseDir: './'
         }
 });
+
+gulp.task('prod', ['sass:prod']);
  
 gulp.watch(input, gulp.parallel('sass'))
 	.on('change', function(event){
