@@ -10,10 +10,10 @@ const browserSync = require("browser-sync").create();
 const del = require('del');
 const size = require('gulp-size');
 
+// Paths
 const input = './src/styles/**/*.scss';
 const output = './dist/styles';
 
-//Gets argument after command
 let getArg = (key) => {
 	var index = process.argv.indexOf(key);
 	var next = process.argv[index + 1];
@@ -23,6 +23,7 @@ let getArg = (key) => {
 global.env = getArg('--env') ? getArg('--env') : 'dev';
 process.env.NODE_ENV = getArg('--env') === 'prod' ? 'production' : 'development';
 
+// Tasks
 gulp.task('sass', () => {
 	return gulp.src(input)
 	.pipe(gulpif(global.env === 'dev', sourcemaps.init()))
@@ -52,8 +53,6 @@ gulp.task('clean', (done) => {
 	return done();
 });
 
-gulp.task('default', gulp.series('clean', gulp.parallel('sass')));
-
 gulp.task('watch', () => {
 	browserSync.init({
         server: {
@@ -67,13 +66,15 @@ gulp.task('watch', () => {
 		});
 });
 
-// TODO: Test task (in separate file)
-// - eslint 
+gulp.task('default', gulp.series('clean', gulp.parallel('sass')));
 
+
+// TODO
+// eslint 
 gulp.task('size', () => {
     return gulp.src('./dist/**/*')
         .pipe(size({title: 'File size:', showFiles: true}))
         .pipe(gulp.dest('./dist'));
 });
   
-gulp.task("build", gulp.series('size'));
+gulp.task("test", gulp.series('size'));

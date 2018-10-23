@@ -7,7 +7,7 @@
     "dev": "node_modules/.bin/gulp --env dev",
     "prod": "node_modules/.bin/gulp --env prod",
     "watch": "node_modules/.bin/gulp watch --env dev",
-    "test": "node_modules/.bin/gulp build"
+    "test": "node_modules/.bin/gulp test"
   },
   "repository": {
     "type": "git",
