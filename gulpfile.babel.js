@@ -10,7 +10,7 @@ const browserSync = require("browser-sync").create();
 const del = require('del');
 const size = require('gulp-size');
 const uglify = require('gulp-uglify');
-const pump = require('pump');
+const concat = require('gulp-concat');
 
 // Paths
 const paths = require('./paths');
@@ -37,7 +37,8 @@ gulp.task('sass', () => {
 	.pipe(gulpif(global.env === 'dev', browserSync.stream()))
 });
 
-gulp.task('scripts', () => gulp.src(path.srcJS)
+gulp.task('scripts', () => gulp.src([path.srcJS, '!scripts/vendors/*.js'])
+	.pipe(concat(path.distJS))
 	.pipe(gulpif(global.env === 'dev', sourcemaps.init()))
 	.pipe(babel({
 		presets: ['@babel/env']
@@ -45,6 +46,7 @@ gulp.task('scripts', () => gulp.src(path.srcJS)
 	.pipe(gulpif(global.env === 'prod', uglify()))
 	.pipe(gulpif(global.env === 'dev', sourcemaps.write()))
 	.pipe(gulp.dest(path.distJS))
+	.pipe(gulpif(global.env === 'dev', browserSync.stream()))
 );
 
 gulp.task('clean', (done) => {
