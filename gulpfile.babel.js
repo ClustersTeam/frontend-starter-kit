@@ -67,7 +67,7 @@ gulp.task('watch', () => {
         }
 	});
 			
-	gulp.watch(input, gulp.parallel('sass', 'scripts'))
+	gulp.watch(path.src, gulp.parallel('sass', 'scripts'))
 		.on('change', function(event){
 			console.log('File' + event.path + ' was ' + event.type + ', running tasks...')
 		});
