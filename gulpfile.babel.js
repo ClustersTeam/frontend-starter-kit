@@ -9,6 +9,9 @@ const gulpif = require('gulp-if');
 const babel = require('gulp-babel');
 const browserSync = require("browser-sync").create();
 const del = require('del');
+// Test tasks
+const size = require('gulp-size');
+const sasslint = require('gulp-sass-lint');
 
 const input = './src/styles/**/*.scss';
 const output = './dist/styles';
@@ -23,7 +26,7 @@ let getArg = (key) => {
 global.env = getArg('--env') ? getArg('--env') : 'dev';
 process.env.NODE_ENV = getArg('--env') === 'prod' ? 'production' : 'development';
 
-gulp.task('sass', function () {
+gulp.task('sass', () => {
 	return gulp.src(input)
 	.pipe(gulpif(global.env === 'dev', sourcemaps.init()))
 	.pipe(sass({fiber: Fiber}).on('error', sass.logError))
@@ -43,7 +46,7 @@ gulp.task('scripts', () => gulp.src('src/app.js')
 
 gulp.task('clean', (done) => {
 	if(global.env === 'prod') {
-		return del([`./dist/*`])
+		return del([`./dist/*`], {force:true})
 		.then(paths => {
 			console.log('Deleted files and folders:\n', paths.join('\n'))
 		});
@@ -52,10 +55,9 @@ gulp.task('clean', (done) => {
 	return done();
 });
 
-  
 gulp.task('default', gulp.series('clean', gulp.parallel('sass')));
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
 	browserSync.init({
         server: {
             baseDir: './'
@@ -72,19 +74,17 @@ gulp.task('watch', function() {
 // - gulp size 
 // - eslint 
 
-gulp.task('test', function(done) {
-	
-	// Example
- 	gulp.task('sass', function () {
-		return gulp.src(input)
-		.pipe(gulpif(global.env === 'dev', sourcemaps.init()))
-		.pipe(sass({fiber: Fiber}).on('error', sass.logError))
-		.pipe(autoprefixer())
-		.pipe(gulpif(global.env === 'prod', cssnano()))
-		.pipe(gulpif(global.env === 'dev', sourcemaps.write()))
-		.pipe(gulp.dest(output))
-		.pipe(gulpif(global.env === 'dev', browserSync.stream()))
-	});
-
-	done()
+gulp.task('size', () => {
+    return gulp.src('./dist/**/*')
+        .pipe(size({title: 'File size:', showFiles: true}))
+        .pipe(gulp.dest('./dist'));
 });
+
+gulp.task('sasslint', function () {
+	return gulp.src('./src/styles/**/*.s+(a|c)ss')
+	  .pipe(sasslint())
+	  .pipe(sasslint.format())
+	  .pipe(sasslint.failOnError())
+  });
+
+gulp.task("build", gulp.series('size', 'sasslint'));
