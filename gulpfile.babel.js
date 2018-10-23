@@ -5,13 +5,10 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const gulpif = require('gulp-if');
-
 const babel = require('gulp-babel');
 const browserSync = require("browser-sync").create();
 const del = require('del');
-// Test tasks
 const size = require('gulp-size');
-const sasslint = require('gulp-sass-lint');
 
 const input = './src/styles/**/*.scss';
 const output = './dist/styles';
@@ -71,7 +68,6 @@ gulp.task('watch', () => {
 });
 
 // TODO: Test task (in separate file)
-// - gulp size 
 // - eslint 
 
 gulp.task('size', () => {
@@ -79,11 +75,5 @@ gulp.task('size', () => {
         .pipe(size({title: 'File size:', showFiles: true}))
         .pipe(gulp.dest('./dist'));
 });
-
-gulp.task('sasslint', function () {
-	return gulp.src('./src/styles/**/*.s+(a|c)ss')
-	  .pipe(sasslint())
-	  .pipe(sasslint.failOnError())
-  });
-
-gulp.task("build", gulp.series('size', 'sasslint'));
+  
+gulp.task("build", gulp.series('size'));
