@@ -9,10 +9,12 @@ const babel = require('gulp-babel');
 const browserSync = require("browser-sync").create();
 const del = require('del');
 const size = require('gulp-size');
+const uglify = require('gulp-uglify');
+const pump = require('pump');
 
 // Paths
-const input = './src/styles/**/*.scss';
-const output = './dist/styles';
+const paths = require('./paths');
+const path = paths.path;
 
 let getArg = (key) => {
 	var index = process.argv.indexOf(key);
@@ -25,26 +27,29 @@ process.env.NODE_ENV = getArg('--env') === 'prod' ? 'production' : 'development'
 
 // Tasks
 gulp.task('sass', () => {
-	return gulp.src(input)
+	return gulp.src(path.srcSCSS)
 	.pipe(gulpif(global.env === 'dev', sourcemaps.init()))
 	.pipe(sass({fiber: Fiber}).on('error', sass.logError))
 	.pipe(autoprefixer())
 	.pipe(gulpif(global.env === 'prod', cssnano()))
 	.pipe(gulpif(global.env === 'dev', sourcemaps.write()))
-	.pipe(gulp.dest(output))
+	.pipe(gulp.dest(path.distCSS))
 	.pipe(gulpif(global.env === 'dev', browserSync.stream()))
 });
 
-gulp.task('scripts', () => gulp.src('src/app.js')
+gulp.task('scripts', () => gulp.src(path.srcJS)
+	.pipe(gulpif(global.env === 'dev', sourcemaps.init()))
 	.pipe(babel({
 		presets: ['@babel/env']
 	}))
-	.pipe(gulp.dest('dist'))
+	.pipe(gulpif(global.env === 'prod', uglify()))
+	.pipe(gulpif(global.env === 'dev', sourcemaps.write()))
+	.pipe(gulp.dest(path.distJS))
 );
 
 gulp.task('clean', (done) => {
 	if(global.env === 'prod') {
-		return del([`./dist/*`], {force:true})
+		return del([path.dist], {force:true})
 		.then(paths => {
 			console.log('Deleted files and folders:\n', paths.join('\n'))
 		});
@@ -66,7 +71,7 @@ gulp.task('watch', () => {
 		});
 });
 
-gulp.task('default', gulp.series('clean', gulp.parallel('sass')));
+gulp.task('default', gulp.series('clean', gulp.parallel('sass', 'scripts')));
 
 
 // TODO
