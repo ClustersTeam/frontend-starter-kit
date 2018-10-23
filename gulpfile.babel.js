@@ -38,7 +38,7 @@ gulp.task('sass', () => {
 });
 
 gulp.task('scripts', () => gulp.src([path.srcJS, '!scripts/vendors/*.js'])
-	.pipe(concat(path.distJS))
+	.pipe(concat('app.js'))
 	.pipe(gulpif(global.env === 'dev', sourcemaps.init()))
 	.pipe(babel({
 		presets: ['@babel/env']
