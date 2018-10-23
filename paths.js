@@ -2,7 +2,7 @@ const path = {
     src: './src/**/*',
     srcHTML: './src/html/**/*.html',
     srcSCSS: './src/styles/**/*.scss',
-    srcJS: './src/js/**/*.js',
+    srcJS: './src/scripts/**/*.js',
 
     dist: './dist/**/*',
     distHTML: './dist/index.html',
