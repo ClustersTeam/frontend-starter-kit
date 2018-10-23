@@ -23,6 +23,7 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
     "fibers": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
