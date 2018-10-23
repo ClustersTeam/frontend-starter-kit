@@ -1,0 +1,23 @@
+.spacing-top-sm { padding-top: var(--spacing-sm); }
+.spacing-bottom-sm { padding-bottom: var(--spacing-sm); }
+
+.spacing-both-sm {
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+}
+
+.spacing-top { padding-top: var(--spacing-md); }
+.spacing-bottom { padding-bottom: var(--spacing-md); }
+
+.spacing-both {
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+}
+
+.spacing-top-lg { padding-top: var(--spacing-lg); }
+.spacing-bottom-lg { padding-bottom: var(--spacing-lg); }
+
+.spacing-both-lg {
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+}

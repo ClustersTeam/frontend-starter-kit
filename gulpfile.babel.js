@@ -8,6 +8,7 @@ const gulpif = require('gulp-if');
 
 const babel = require('gulp-babel');
 const browserSync = require("browser-sync").create();
+const del = require('del');
 
 const input = './src/styles/**/*.scss';
 const output = './dist/styles';
@@ -39,8 +40,20 @@ gulp.task('scripts', () => gulp.src('src/app.js')
 	}))
 	.pipe(gulp.dest('dist'))
 );
+
+gulp.task('clean', (done) => {
+	if(global.env === 'prod') {
+		return del([`./dist/*`])
+		.then(paths => {
+			console.log('Deleted files and folders:\n', paths.join('\n'))
+		});
+	}
+
+	return done();
+});
+
   
-gulp.task('default', gulp.parallel('sass'));
+gulp.task('default', gulp.series('clean', gulp.parallel('sass')));
 
 gulp.task('watch', function() {
 	browserSync.init({
