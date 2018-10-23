@@ -4,10 +4,10 @@
   "description": "- Package manager - npm 6/8\r   - Task runner - Gulp\r   - Templating - Next.js / Handlebars\r   - Reinforce frontend style - Linters and Prettier",
   "main": "gulpfile.babel.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node_modules/.bin/gulp --env dev",
     "prod": "node_modules/.bin/gulp --env prod",
-    "watch": "node_modules/.bin/gulp watch --env dev"
+    "watch": "node_modules/.bin/gulp watch --env dev",
+    "test": "node_modules/.bin/gulp build"
   },
   "repository": {
     "type": "git",

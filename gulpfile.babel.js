@@ -83,7 +83,6 @@ gulp.task('size', () => {
 gulp.task('sasslint', function () {
 	return gulp.src('./src/styles/**/*.s+(a|c)ss')
 	  .pipe(sasslint())
-	  .pipe(sasslint.format())
 	  .pipe(sasslint.failOnError())
   });
 
