@@ -31,8 +31,7 @@ gulp.task('js', () => {
 gulp.task('vendor', () => {
   return gulp
     .src([
-      './node_modules/jquery/dist/jquery.min.js',
-      './node_modules/modernizr/bin/modernizr'
+      './node_modules/jquery/dist/jquery.min.js'
     ])
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('./dist/scripts/vendor'))

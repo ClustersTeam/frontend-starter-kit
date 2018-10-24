@@ -5,7 +5,8 @@ const path = paths.path;
 const gulpif = require('gulp-if');
 const env = require('../environment');
 
-module.exports = function () {
+
+gulp.task('imagemin', () => {
     return gulp.src(path.srcImages)
     .pipe(gulpif(env.global === 'prod', imagemin([
         imagemin.gifsicle({interlaced: true}),
@@ -19,4 +20,4 @@ module.exports = function () {
         })
     ])))
     .pipe(gulp.dest(path.distImages))
-};
+})
