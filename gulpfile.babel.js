@@ -8,5 +8,8 @@ gulp.task('dev', gulp.series(gulp.parallel('styles', 'js', 'image:copy')))
 
 gulp.task(
   'default',
-  gulp.series('clean', gulp.parallel('styles', 'scripts', 'imagemin'))
+  gulp.series(
+    'clean',
+    gulp.parallel('styles', 'scripts', 'imagemin', 'templates')
+  )
 )
