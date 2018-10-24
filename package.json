@@ -35,7 +35,12 @@
     "gulp-sass": "^4.0.2",
     "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "^2.6.4",
+    "gulp-stylelint": "^7.0.0",
     "gulp-uglify": "^3.0.1",
-    "require-dir": "^1.1.0"
+    "require-dir": "^1.1.0",
+    "stylelint": "^9.6.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^1.0.0",
+    "stylelint-scss": "^3.3.2"
   }
 }
