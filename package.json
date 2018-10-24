@@ -4,7 +4,7 @@
   "description": "- Package manager - npm 6/8\r   - Task runner - Gulp\r   - Templating - Next.js / Handlebars\r   - Reinforce frontend style - Linters and Prettier",
   "main": "gulpfile.babel.js",
   "scripts": {
-    "dev": "node_modules/.bin/gulp --env dev",
+    "dev": "node_modules/.bin/gulp dev --env dev",
     "prod": "node_modules/.bin/gulp --env prod",
     "watch": "node_modules/.bin/gulp watch --env dev",
     "test": "node_modules/.bin/gulp tests"
