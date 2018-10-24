@@ -21,7 +21,4 @@ gulp.task('filesize', () => {
     .pipe(gulp.dest('../dist'))
 })
 
-module.exports = done => {
-  gulp.series('filesize', 'stylelint')
-  done()
-}
+gulp.task('tests', gulp.series('filesize', 'stylelint'))

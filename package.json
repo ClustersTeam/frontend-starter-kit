@@ -7,7 +7,7 @@
     "dev": "node_modules/.bin/gulp --env dev",
     "prod": "node_modules/.bin/gulp --env prod",
     "watch": "node_modules/.bin/gulp watch --env dev",
-    "test": "node_modules/.bin/gulp test"
+    "test": "node_modules/.bin/gulp tests"
   },
   "repository": {
     "type": "git",
@@ -42,5 +42,8 @@
     "stylelint-config-standard": "^18.2.0",
     "stylelint-order": "^1.0.0",
     "stylelint-scss": "^3.3.2"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
   }
 }
