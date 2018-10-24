@@ -7,8 +7,9 @@ const tasks = requireDir('./tasks');
 // Tasks
 gulp.task('sass', tasks.styles);
 gulp.task('scripts', tasks.scripts);
-gulp.task("test", tasks.tests);
-gulp.task("clean", tasks.clean);
-gulp.task("watch", tasks.watch);
+gulp.task('test', tasks.tests);
+gulp.task('clean', tasks.clean);
+gulp.task('imagemin', tasks.imagemin);
+gulp.task('watch', tasks.watch);
 
-gulp.task('default', gulp.series('clean', gulp.parallel('sass', 'scripts')));
+gulp.task('default', gulp.series('clean', gulp.parallel('sass', 'scripts', 'imagemin')));

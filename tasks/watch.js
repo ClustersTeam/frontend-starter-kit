@@ -10,6 +10,7 @@ const path = paths.path;
 
 gulp.task('sass', tasks.styles);
 gulp.task('scripts', tasks.scripts);
+gulp.task('imagemin', tasks.imagemin);
 
 module.exports = function () {
     browserSync.init({
@@ -18,7 +19,7 @@ module.exports = function () {
         }
 	});
 			
-	gulp.watch(path.src, gulp.parallel('sass', 'scripts'))
+	gulp.watch(path.src, gulp.parallel('sass', 'scripts', 'imagemin'))
 		.on('change', function(event){
 			console.log('File' + event.path + ' was ' + event.type + ', running tasks...')
 		});
