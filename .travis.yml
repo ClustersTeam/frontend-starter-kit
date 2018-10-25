@@ -11,3 +11,4 @@ scripts:
   - npm tests
   - npm run prod
 
+after_success: npm run prod
