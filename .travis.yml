@@ -3,5 +3,11 @@ node_js:
   - '8'
 install:
   - npm install
+
+env:
+- NODE_ENV=prod
+
 scripts:
-  - npm prod
+  - npm tests
+  - npm run prod
+
