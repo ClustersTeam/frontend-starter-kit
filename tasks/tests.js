@@ -1,26 +1,23 @@
-// gulp
-const gulp = require("gulp");
+const gulp = require('gulp')
+const size = require('gulp-size')
 
-// load all plugins in "devDependencies" into the variable $
-const $ = require("gulp-load-plugins")({
-    pattern: ["*"],
-    scope: ["devDependencies"]
-});
+const stylelint = require('gulp-stylelint')
 
 const paths = require('../paths')
 const path = paths.path
 
 gulp.task('stylelint', () => {
   return gulp.src(path.srcSCSS).pipe(
-    $.stylelint({
+    stylelint({
       reporters: [{ formatter: 'string', console: true }]
     })
   )
 })
 
 gulp.task('filesize', () => {
-  return gulp.src(path.dist)
-    .pipe($.size({ title: 'File size:', showFiles: true }))
+  return gulp
+    .src(path.dist)
+    .pipe(size({ title: 'File size:', showFiles: true }))
     .pipe(gulp.dest('../dist'))
 })
 

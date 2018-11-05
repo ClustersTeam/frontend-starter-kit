@@ -5,10 +5,6 @@
 - Templating -Handlebars
 - Reinforce frontend style - Linters and Prettier(install plugin in VSC)
 
-#WHY Gulp not Grunt or Webpack?
-1. A fron­tend work­flow automa­tion tool Grunt is some­what more ver­bose to con­fig­ure. It’s also in gen­er­al slow­er than Gulp for build­ing things, due to its file-ori­ent­ed approach.
-2. For web­pack to be used effec­tive­ly, it real­ly needs to be embraced whole-hog and used not just as a mod­ule bundler, but as a mod­ule loader as well.
-
 # CSS
 
 Reference (https://github.com/ClustersTeam/css/blob/master/README.md)
