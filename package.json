@@ -7,6 +7,7 @@
     "dev": "node_modules/.bin/gulp dev --env dev",
     "prod": "node_modules/.bin/gulp --env prod",
     "watch": "node_modules/.bin/gulp watch --env dev",
+    "jasmine": "node_modules/.bin/gulp jasmine",
     "test": "node_modules/.bin/gulp tests"
   },
   "repository": {
