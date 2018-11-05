@@ -52,6 +52,7 @@
     "stylelint-scss": "^3.3.2"
   },
   "dependencies": {
+    "jasmine": "^3.3.0",
     "jquery": "^3.3.1"
   }
 }

@@ -39,6 +39,10 @@ Reference (https://github.com/ClustersTeam/css/blob/master/README.md)
 ```
 > npm install
 ```
+- Install Jasmine globally (Optional) 
+```
+> npm install -g jasmine
+```
 
 # Setup
 
@@ -52,6 +56,9 @@ The following commands are available:
 # Jasmine Tests
 
 Place your tests in /spec:
+
+### If you have Jasmine globally
+
 To run a specific test run:
 ```
 > jasmine spec\test.spec.js
@@ -59,7 +66,13 @@ To run a specific test run:
 
 To run all the tests in the folder run:
 ```
-> jasmine spec\*.js
+> jasmine 
+```
+### If you only have gulp-jasmine
+
+To run all the tests in the folder run:
+```
+> gulp jasmine
 ```
 
 

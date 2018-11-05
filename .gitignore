@@ -3,6 +3,3 @@ node_modules
 # Generated files
 dist/**/*.js
 dist/**/*.css
-
-# Jasmine results file
-junitresults.xml
