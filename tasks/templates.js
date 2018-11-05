@@ -1,11 +1,13 @@
-const fs = require('fs')
-const gulp = require('gulp')
-const handlebars = require('gulp-compile-handlebars')
-const layouts = require('handlebars-layouts')
-const rename = require('gulp-rename')
-const replace = require('gulp-replace')
+// gulp
+const gulp = require("gulp");
 
-handlebars.Handlebars.registerHelper(layouts(handlebars.Handlebars))
+// load all plugins in "devDependencies" into the variable $
+const $ = require("gulp-load-plugins")({
+    pattern: ["*"],
+    scope: ["devDependencies"]
+});
+
+$.handlebars.Handlebars.registerHelper($.layouts($.handlebars.Handlebars))
 
 gulp.task('templates', () => {
   const templateData = {},
@@ -21,7 +23,7 @@ gulp.task('templates', () => {
 
   return gulp
     .src('./src/templates/**/*.hbs')
-    .pipe(handlebars(templateData, options))
+    .pipe($.handlebars(templateData, options))
     .pipe(
       rename(function (path) {
         path.extname = '.html'
@@ -33,6 +35,6 @@ gulp.task('templates', () => {
 gulp.task('templates:optimized', gulp.series('templates'), () => {
   return gulp
     .src('./dist/**/*.html')
-    .pipe(replace(/\.\.\//g, ''))
+    .pipe($.replace(/\.\.\//g, ''))
     .pipe(gulp.dest('./dist/'))
 })
