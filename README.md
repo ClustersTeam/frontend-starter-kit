@@ -89,3 +89,8 @@ To run all the tests in the folder run:
 ```
 > npm run prod
 ```
+
+
+# Created by
+
+Teodora Kacharova, Emiliya Sokolova, Konstantin Ivanov, Daut Molahasanov
