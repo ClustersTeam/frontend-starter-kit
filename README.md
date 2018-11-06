@@ -93,4 +93,4 @@ To run all the tests in the folder run:
 
 # Created by
 
-Teodora Kacharova, Emiliya Sokolova, Konstantin Ivanov, Daut Molahasanov
+[Teodora Kacharova](https://github.com/tekacharova), [Emiliya Sokolova](https://github.com/emilium), [Konstantin Ivanov](https://github.com/KocetoIvanov), [Daut Molahasanov](https://github.com/daut-molahasanov)
