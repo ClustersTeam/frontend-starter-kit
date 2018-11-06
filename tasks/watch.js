@@ -17,7 +17,7 @@ gulp.task('watch', () => {
   })
 
   gulp
-    .watch(path.src, gulp.parallel('styles', 'js', 'image:copy'))
+    .watch(path.src, gulp.parallel('styles', 'js', 'image:copy', 'criticalcss'))
     .on('change', function (event) {
       console.log(
         'File' + event.path + ' was ' + event.type + ', running tasks...'
