@@ -1,3 +1,9 @@
 node_modules
+
+# Generated files
 dist/**/*.js
 dist/**/*.css
+
+# Jasmine examples files
+lib/jasmine_examples
+lib/jasmine_examples/*
