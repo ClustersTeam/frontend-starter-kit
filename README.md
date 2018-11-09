@@ -72,3 +72,8 @@ To run the tests:
 ```
 > npm run prod
 ```
+
+
+# Created by
+
+[Teodora Kacharova](https://github.com/tekacharova), [Emiliya Sokolova](https://github.com/emilium), [Konstantin Ivanov](https://github.com/KocetoIvanov), [Daut Molahasanov](https://github.com/daut-molahasanov)
