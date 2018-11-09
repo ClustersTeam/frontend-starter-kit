@@ -4,7 +4,7 @@
 - Task runner - Gulp
 - Templating -Handlebars
 - Reinforce frontend style - Linters and Prettier(install plugin in VSC)
-- Jasmine (https://jasmine.github.io/setup/nodejs.html)
+- Jest (https://jestjs.io/)
 
 # CSS
 
@@ -39,10 +39,6 @@ Reference (https://github.com/ClustersTeam/css/blob/master/README.md)
 ```
 > npm install
 ```
-- Install Jasmine globally (Optional) 
-```
-> npm install -g jasmine
-```
 
 # Setup
 
@@ -53,26 +49,13 @@ The following commands are available:
 ```
 > npm run prod
 ```
-# Jasmine Tests
+# Jest Tests
 
-Place your tests in /spec:
+Place tests in /spec following the naming convention 
 
-### If you have Jasmine globally
-
-To run a specific test run:
+To run the tests:
 ```
-> jasmine spec\test.spec.js
-```
-
-To run all the tests in the folder run:
-```
-> jasmine 
-```
-### If you only have gulp-jasmine
-
-To run all the tests in the folder run:
-```
-> gulp jasmine
+> npm run jest
 ```
 
 
