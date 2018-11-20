@@ -35,22 +35,12 @@ Reference (https://github.com/ClustersTeam/css/blob/master/README.md)
 
 - Download and install Node.js(for npm) from the [Node.js](https://nodejs.org/).
 
-# Setup
-
-The following commands are available:
-
-- to start the project before watch run
-
-```
-> npm run prod
-```
-
 # Steps
 
 1. Clone repo in the root folder of your project
 
 2. When including the starter kit in any new project change the paths
-in the paths.js
+in the paths.js (only dist paths in the ResourcePackages/[yourtheme])
 
 3. To install manually node modules run:
 
