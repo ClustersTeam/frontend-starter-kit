@@ -1,6 +1,6 @@
 # Tooling
 
-- Package manager - npm 6/8
+- Package manager - the lowest npm version should be at least v5.6.0 and node version - v8.11.1
 - Task runner - Gulp
 - Templating -Handlebars
 - Reinforce frontend style - Linters and Prettier(install plugin in VSC)
