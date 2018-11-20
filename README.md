@@ -34,15 +34,6 @@ Reference (https://github.com/ClustersTeam/css/blob/master/README.md)
 # Installations
 
 - Download and install Node.js(for npm) from the [Node.js](https://nodejs.org/).
-- To install manually node modules run:
-
-```
-> npm install
-```
-- Install Jasmine globally (Optional) 
-```
-> npm install -g jasmine
-```
 
 # Setup
 
@@ -53,43 +44,43 @@ The following commands are available:
 ```
 > npm run prod
 ```
-# Jasmine Tests
-
-Place your tests in /spec:
-
-### If you have Jasmine globally
-
-To run a specific test run:
-```
-> jasmine spec\test.spec.js
-```
-
-To run all the tests in the folder run:
-```
-> jasmine 
-```
-### If you only have gulp-jasmine
-
-To run all the tests in the folder run:
-```
-> gulp jasmine
-```
-
 
 # Steps
 
-1. Before start working on the project run 
+1. Clone repo in the root folder of your project
+
+2. When including the starter kit in any new project change the paths
+in the paths.js
+
+3. To install manually node modules run:
+
+```
+> npm install
+```
+
+4. Before start working on the project run 
 
 ```
 > npm run prod
 ```
 
-2. When adding a new js library (node_modules package) run
+5. When adding a new js library (node_modules package) run
 
 ```
 > npm run prod
 ```
 
+6. When adding any new file (js/css/templates/images) run
+
+```
+> npm run prod
+```
+
+7. Start watcher again and enjoy!
+
+```
+> npm run watch
+```
 
 # Created by
 
