@@ -4,7 +4,7 @@
 - Task runner - Gulp
 - Templating -Handlebars
 - Reinforce frontend style - Linters and Prettier(install plugin in VSC)
-- Jasmine (https://jasmine.github.io/setup/nodejs.html)
+- Jest (https://jestjs.io/)
 
 # CSS
 
@@ -37,6 +37,7 @@ Reference (https://github.com/ClustersTeam/css/blob/master/README.md)
 
 # Steps
 
+
 1. Clone repo in the root folder of your project
 
 2. When including the starter kit in any new project change the paths
@@ -58,6 +59,7 @@ in the paths.js (only dist paths in the ResourcePackages/[yourtheme])
 
 ```
 > npm run prod
+
 ```
 
 6. When adding any new file (js/css/templates/images) run
@@ -71,6 +73,14 @@ in the paths.js (only dist paths in the ResourcePackages/[yourtheme])
 ```
 > npm run watch
 ```
+
+# Jest Tests
+
+Place tests in /spec following the naming convention 
+
+To run the tests:
+```
+> npm run jest
 
 # Created by
 
