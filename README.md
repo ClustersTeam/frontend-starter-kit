@@ -1,6 +1,6 @@
 # Tooling
 
-- Package manager - npm 6/8
+- Package manager - the lowest npm version should be at least v5.6.0 and node version - v8.11.1
 - Task runner - Gulp
 - Templating -Handlebars
 - Reinforce frontend style - Linters and Prettier(install plugin in VSC)
@@ -34,21 +34,46 @@ Reference (https://github.com/ClustersTeam/css/blob/master/README.md)
 # Installations
 
 - Download and install Node.js(for npm) from the [Node.js](https://nodejs.org/).
-- To install manually node modules run:
+
+# Steps
+
+
+1. Clone repo in the root folder of your project
+
+2. When including the starter kit in any new project change the paths
+in the paths.js (only dist paths in the ResourcePackages/[yourtheme])
+
+3. To install manually node modules run:
 
 ```
 > npm install
 ```
 
-# Setup
-
-The following commands are available:
-
-- to start the project before watch run
+4. Before start working on the project run 
 
 ```
 > npm run prod
 ```
+
+5. When adding a new js library (node_modules package) run
+
+```
+> npm run prod
+
+```
+
+6. When adding any new file (js/css/templates/images) run
+
+```
+> npm run prod
+```
+
+7. Start watcher again and enjoy!
+
+```
+> npm run watch
+```
+
 # Jest Tests
 
 Place tests in /spec following the naming convention 
@@ -56,23 +81,6 @@ Place tests in /spec following the naming convention
 To run the tests:
 ```
 > npm run jest
-```
-
-
-# Steps
-
-1. Before start working on the project run 
-
-```
-> npm run prod
-```
-
-2. When adding a new js library (node_modules package) run
-
-```
-> npm run prod
-```
-
 
 # Created by
 
