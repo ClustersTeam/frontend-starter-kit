@@ -81,6 +81,7 @@ Place tests in /spec following the naming convention
 To run the tests:
 ```
 > npm run jest
+```
 
 # Created by
 
